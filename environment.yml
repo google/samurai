@@ -1,0 +1,45 @@
+name: samurai
+channels:
+    - conda-forge
+    - defaults
+dependencies:
+    - python=3.9
+    - pip
+    - cudatoolkit=11.2.2
+    - cudnn=8.1.0.77
+    - numpy
+    - matplotlib
+    - configargparse
+    - imagemagick
+    - openexr-python
+    - scikit-learn
+    - addict
+    - ffmpeg
+    - pyntcloud
+    - jupyterlab
+    - nodejs >=12.0.0
+    - pip:
+          - pyexr==0.3.8
+          - tensorflow==2.8
+          - tensorflow-addons==0.16.1
+          - tensorflow-io==0.25
+          - tensorflow-graphics==2021.12.3
+          - tensorboard_plugin_profile
+          - transformers==4.17.0
+          - opencv-python==4.5.5.64
+          - open3d==0.15.2
+          - imageio==2.11.1
+          - imageio-ffmpeg==0.4.5
+          - scipy
+          - pytest
+          - tqdm
+          - farrow-and-ball
+          - flake8
+          - black==21.7b0
+          - isort
+          - scikit-image
+          - gdown
+          - tabulate
+          - pymcubes
+          - pythreejs
+          - ipympl
