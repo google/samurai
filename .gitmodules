@@ -1,0 +1,6 @@
+[submodule "external/u2net"]
+	path = external/u2net
+	url = https://github.com/xuebinqin/U-2-Net.git
+[submodule "external/sunvalley-tk"]
+	path = external/sunvalley-tk
+	url = https://github.com/rdbende/Sun-Valley-ttk-theme.git
