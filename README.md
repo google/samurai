@@ -1,3 +1,5 @@
+This is not an officially supported Google product.
+
 # SAMURAI: Shape And Material from Unconstrained Real-world Arbitrary Image collections
 ### [Project Page](https://markboss.me/publication/2022-samurai/) | [Video](https://youtu.be/LlYuGDjXp-8) | [Paper](https://arxiv.org/abs/2205.15768) | [Scenes](https://www.dropbox.com/sh/x3u2szvaqjtaykl/AACCZn05NciMa5bHhn60p9vja?dl=0)
 
