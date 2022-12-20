@@ -29,6 +29,8 @@ In case new datasets should be processed, we also provide a bash script to setup
 
 ## Running
 
+Download one of our test [scenes](https://www.dropbox.com/sh/x3u2szvaqjtaykl/AACCZn05NciMa5bHhn60p9vja?dl=0) and extract it to a folder. Then run:
+
 ```
 python train_samurai.py --config configs/samurai/samurai.txt --datadir [DIR_TO_DATASET_FOLDER] --basedir [TRAIN_DIR] --expname [EXPERIMENT_NAME] --gpu [COMMA_SEPARATED_GPU_LIST]
 ```
