@@ -27,6 +27,7 @@ dependencies:
           - tensorboard_plugin_profile
           - transformers==4.17.0
           - opencv-python==4.5.5.64
+          - opencv-python-headless==4.5.5.64
           - open3d==0.15.2
           - imageio==2.11.1
           - imageio-ffmpeg==0.4.5
