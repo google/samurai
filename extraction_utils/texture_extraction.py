@@ -46,7 +46,7 @@ def texture_query_network(
     positions_flat = positions.reshape(-1, 3)
     normals_flat = normals.reshape(-1, 3)
 
-    positions_normals_flat = np.concatenate((positions_flat, normals_flat), -1)
+    positions_normals_flat = np.concatenate((positions_flat, normals_flat), -1).astype(np.float32)
 
     appearance_context = samurai.appearance_store(
         tf.convert_to_tensor([extraction_img])
@@ -99,7 +99,7 @@ def texture_query_network(
                 position_sample - (position_sample + normal_sample)
             )
 
-            cur_origin = tf.convert_to_tensor(tf.reshape(cur_origin, (1, 1, -1, 3)))
+            cur_origin = tf.convert_to_tensor(tf.reshape(cur_origin, (1, 1, -1, 3)), tf.float32)
             cur_direction = normalize(tf.reshape(cur_direction, (1, 1, -1, 3)))
 
             points, z_samples = setup_fixed_grid_sampling(
@@ -220,15 +220,15 @@ def texture_query_network(
     normal = parameters_np["normal"] * parameters_np["acc_alpha"]
     normal = dilate(normal * 2 - 1, np.all(normal != 0, -1)) * 0.5 + 0.5
 
-    imageio.imwrite(os.path.join(output_dir, "normal.exr"), normal)
+    imageio.imwrite(os.path.join(output_dir, "normal.exr"), normal.astype(np.float32))
     imageio.imwrite(
         os.path.join(output_dir, "normal.jpg"),
-        ((normal * 0.5 + 0.5) * 255).astype(np.uint8),
+        (np.clip((normal * 0.5 + 0.5), 0, 1) * 255).astype(np.uint8),
     )
     for mtype in ["basecolor", "metallic", "roughness"]:
         imageio.imwrite(
             os.path.join(output_dir, mtype + ".jpg"),
-            (parameters_np[mtype] * 255).astype(np.uint8),
+            (np.clip(parameters_np[mtype], 0, 1) * 255).astype(np.uint8),
         )
 
 
